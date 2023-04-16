@@ -1,0 +1,43 @@
+/* --- Reset ---*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    margin: 0;
+    color: white;
+}
+
+h1, h2, h3, h4, p, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+input {
+    outline: 0;
+    font-family: inherit;
+    border: 0;
+}
+
+button {
+    border: 0;
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
