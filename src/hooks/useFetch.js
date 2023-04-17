@@ -11,7 +11,7 @@ const useFetch = (url) => {
 
         axios.get(url)
             .then(res => {
-
+                //console.log(res.data);
                 setState(res.data)
                 setHasError(false)
             })
