@@ -13,8 +13,6 @@ function App() {
   const [namelocations, setNamelocations] = useState();
   const [newlocation, setNewlocation] = useState(0);
 
-  
-
   //1.- Inicio buscando una locacion aleatoria:
   let url = `https://rickandmortyapi.com/api/location/${initiallocation}`;
   const [apiurl, setApiurl] = useState(url);
@@ -36,7 +34,6 @@ function App() {
         .then((res) => {
           //console.log(res.data.results);
           setNamelocations(res.data.results);
-          
         })
         .catch((err) => {
           console.log(err);
@@ -52,7 +49,6 @@ function App() {
 
     let id = Number(text.split("-")[0].split(" ").join(""));
     setNewlocation(id);
-    
   };
 
   useEffect(() => {
@@ -76,10 +72,12 @@ function App() {
   };
 
   return (
-
     <>
       {location ? (
         <div className="app">
+          <header className="header">
+            <img className="img__header" src="/images/headerIMG.jpg" alt="" />
+          </header>
           <h1 className="app__title">Rick and Morty</h1>
 
           <form className="app__form" onSubmit={handleSubmit}>
@@ -108,7 +106,7 @@ function App() {
             </ul>
           </div>
           {!hasError ? (
-            <MainContent location={location}  newlocation={newlocation} />
+            <MainContent location={location} newlocation={newlocation} />
           ) : (
             <h2 className="app__error">
               ❌ Hey! you must provide an id from 1 to 126😭
@@ -120,7 +118,6 @@ function App() {
       )}
     </>
   );
-
 }
 
 export default App;
