@@ -13,7 +13,7 @@ const ResidentCard = ({url}) => {
                 ?
                 <img className="resident__avatar" src={resident?.image} alt="" />
                 :
-                <img className="resident__avatar" src="./src/assets/loadingGif.gif" alt="" />
+                <img className="resident__avatar" src="/images/loadingGif.gif" alt="" />
             }
             <div className="resident__status">
                 <div className={`resident__status-circle ${resident?.status}`}></div>

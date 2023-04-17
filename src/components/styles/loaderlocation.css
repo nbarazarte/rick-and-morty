@@ -1,5 +1,5 @@
 .loader {
-    background-image: url("./src/assets/loading.jpg");
+    background-image: url("/images/loading.jpg");
     background-size: cover;
     background-position: center;
     position: fixed;
