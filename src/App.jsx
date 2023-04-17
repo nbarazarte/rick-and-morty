@@ -76,6 +76,7 @@ function App() {
   };
 
   return (
+
     <>
       {location ? (
         <div className="app">
@@ -119,6 +120,7 @@ function App() {
       )}
     </>
   );
+
 }
 
 export default App;
