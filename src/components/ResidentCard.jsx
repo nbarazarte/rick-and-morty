@@ -8,7 +8,13 @@ const ResidentCard = ({url}) => {
   return (
     <article className="resident">
         <header className="resident__header">
-            <img className="resident__avatar" src={resident?.image} alt="" />
+            {
+                resident
+                ?
+                <img className="resident__avatar" src={resident?.image} alt="" />
+                :
+                <img className="resident__avatar" src="./src/assets/loadingGif.gif" alt="" />
+            }
             <div className="resident__status">
                 <div className={`resident__status-circle ${resident?.status}`}></div>
                 <span className="resident__status-label">{resident?.status}</span>
