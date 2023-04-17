@@ -17,7 +17,7 @@ function App() {
   let url = `https://rickandmortyapi.com/api/location/${initiallocation}`
   const [apiurl, setApiurl] = useState(url)
 
-  //2.- Creo un estado con el nombre:
+  //2.- Creo un estado con el nombre que este en el input:
   const handleSearchByName = () =>{
     document.getElementById('listLocationContent').style.display = 'inline'
     document.getElementById('listLocations').style.visibility = 'visible'
@@ -47,6 +47,9 @@ function App() {
   //3.- Obtengo el id del nombre de la locacion seleccionada
   const handlerSelect = (e) => {
     let text = e.target.innerHTML
+
+    console.log(text);
+
     let id = Number(text.split('-')[0].split(' ').join(''))
     setNewlocation(id)
   }
@@ -56,6 +59,7 @@ function App() {
     if(newlocation != 0){
       let url = `https://rickandmortyapi.com/api/location/${newlocation}`
     
+      document.getElementById('inputSearch').value = ''
       document.getElementById('listLocationContent').style.display = 'none'
       document.getElementById('listLocations').style.visibility = 'hidden'
       
@@ -67,8 +71,8 @@ function App() {
   const [location, hasError] = useFetch(apiurl)
 
   const handleSubmit = event => {
-    event.preventDefault()
-    setInputValue(inputLocation.current.value)
+    //event.preventDefault()
+    //setInputValue(inputLocation.current.value)
   }
 
   return (
@@ -77,8 +81,8 @@ function App() {
       <h1 className='app__title'>Rick and Morty</h1>
 
       <form className='app__form' onSubmit={handleSubmit}>
-        <input className='app__input' ref={inputLocation} type="text" onChange={handleSearchByName}/>
-        <button className='app__btn'>search</button>
+        <input id='inputSearch' className='app__input' ref={inputLocation} type="text" onChange={handleSearchByName} placeholder="Search by location's name"/>
+        <button className='app__btn'>Reset</button>
       </form>
 
       <div id="listLocationContent">
@@ -86,7 +90,7 @@ function App() {
           {
             namelocations?.map(namelocation => (
               <li className='app__listNames' key={namelocation.id} onClick={handlerSelect}>
-                {`${namelocation.id} - ${namelocation.name}`}
+                {`${namelocation.id} - ${namelocation.name}`} 
               </li>
             ))            
           }
