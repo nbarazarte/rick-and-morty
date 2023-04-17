@@ -4,7 +4,7 @@ import './styles/loaderlocation.css'
 const LoaderLocation = () => {
   return (
     <div className='loader'>
-        <div class="lds-hourglass"></div>
+        <div className="lds-hourglass"></div>
     </div>
   )
 }

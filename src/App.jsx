@@ -36,6 +36,7 @@ function App() {
         .then((res) => {
           //console.log(res.data.results);
           setNamelocations(res.data.results);
+          
         })
         .catch((err) => {
           console.log(err);
@@ -51,6 +52,7 @@ function App() {
 
     let id = Number(text.split("-")[0].split(" ").join(""));
     setNewlocation(id);
+    
   };
 
   useEffect(() => {
@@ -105,7 +107,7 @@ function App() {
             </ul>
           </div>
           {!hasError ? (
-            <MainContent location={location} />
+            <MainContent location={location}  newlocation={newlocation} />
           ) : (
             <h2 className="app__error">
               ❌ Hey! you must provide an id from 1 to 126😭
