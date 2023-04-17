@@ -71,7 +71,8 @@ function App() {
   const [location, hasError] = useFetch(apiurl)
 
   const handleSubmit = event => {
-    //event.preventDefault()
+    event.preventDefault()
+    setNewlocation(getRandomLocation())
     //setInputValue(inputLocation.current.value)
   }
 
