@@ -75,9 +75,7 @@ function App() {
     <>
       {location ? (
         <div className="app">
-          <header className="header">
-            <img className="img__header" src="/images/headerIMG.jpg" alt="" />
-          </header>
+          <header className="app__header"></header>
           <h1 className="app__title">Rick and Morty</h1>
 
           <form className="app__form" onSubmit={handleSubmit}>
